@@ -32,7 +32,15 @@
 
 //CODE HERE
 
+const pizza = {
+    name: 'Pizza',
+    price: 5,
+    category: 'entree',
+    popularity: '10',
+    rating: 7.89,
+    tags: ['kids', 'family', 'fan favorite']
 
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,8 +71,8 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -87,8 +96,26 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
 
+//CODE HERE
+class FoodItem {
+    constructor(name, price, category, popularity, rating, tags){
+        this.name = name
+        this.price = price
+        this.category = category
+        this.popularity = popularity
+        this.rating = rating
+        this.tags = tags
+    }
+}
+let food1 = new FoodItem ('tri-tip salad', 14, 'entree', 8, 7.44, ['healthy, protein, green'])
+let food2 = new FoodItem ('burger', 9.99, 'entree', 5, 6.65, ['big portion', 'meat eater'])
+let food3 = new FoodItem ('fries', 3.99, 'side', 7, 4.44, ['salty', 'snack', 'kids'])
+let food4 = new FoodItem ('wings', 8.99, 'appetizer', 5, 6.43, ['hot', 'messy','spicy'])
+let food5 = new FoodItem ('chicken fingers', 7.99, 'entree', 10, 9.78, ['cant go wrong', 'safe option'])
+
+let foodArr = [food1, food2, food3, food4, food5]
+console.log(foodArr)
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,9 +132,11 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(foodArr => {
+    return foodArr.tags.includes('spicy')
+})
 
-
+// console.log(filteredFood) // returns the wings object
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -141,7 +170,7 @@
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type isn't `below`, return objects whose   ///I am going to assume you meant to put IS 'below
         value for the given property is less than the 
         `number` passed in
     
@@ -149,7 +178,35 @@
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    let filteredArry = []
+    if (property === 'rating') {
 
+        if (type === 'above') {
+            filteredArry = foodArr.filter(foodArr => foodArr.rating > number)
+        }else if (type === 'below') {
+            filteredArry = foodArr.filter(foodArr => foodArr.rating < number)
+        }
+    }
+    if (property === 'popularity') {
+
+        if (type === 'above') {
+            filteredArry = foodArr.filter(foodArr => foodArr.popularity > number)
+        }else if (type === 'below') {
+            filteredArry = foodArr.filter(foodArr => foodArr.popularity < number)
+        }
+    }
+    if (property === 'price') {
+
+        if (type === 'above') {
+            filteredArry = foodArr.filter(foodArr => foodArr.price > number)
+        }else if (type === 'below') {
+            filteredArry = foodArr.filter(foodArr => foodArr.price < number)
+        }
+    }
+        
+    return filteredArry
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +216,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 5, 'below'))
