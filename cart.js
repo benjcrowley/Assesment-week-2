@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => {
+    return acc + cur.price
+}, 0)
 
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,7 +57,9 @@ const cart = [
 */
 
 //CODE HERE
-
+function calcFinalPrice (cartTotal, couponValue, tax) {
+    return (cartTotal + cartTotal * tax) - couponValue
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +84,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+first name : so employees know what to call them
+last name : because first names arent usually unique
+phone number : to enter in for a rewards program
+email : to send out receipts or coupons to
 */
 
 /*
@@ -88,3 +96,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    firstName: 'Bennett',
+    lastName: 'Crowley',
+    phoneNumber: "8018752975",
+    email: 'benjcrowley@gmail.com'
+}
