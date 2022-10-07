@@ -20,7 +20,15 @@
 */
 
 //CODE HERE
-
+class Employee {
+    constructor(name, shifts){
+        this.name = name
+        this.shifts = shifts
+    }
+    getSchedule(){
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+}
 
 
 /*
@@ -34,15 +42,14 @@
 */
 
 //CODE HERE
-
+let empOne = new Employee('bennett', 'weekday nights')
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-
-
+empOne.getSchedule()
 /*
     Make a copy of the empOne object
     using the spread operator.
