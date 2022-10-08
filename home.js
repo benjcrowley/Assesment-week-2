@@ -94,6 +94,7 @@ function canWeDeliverTwo (zipCode) {
         return "Sorry, we can't deliver to that address"
     }
 }
+
 // console.log(canWeDeliver(84606)) //returns Sorry, we can't deliver to that address
 // console.log(canWeDeliver(85205)) //returns You're in our delivery zone!
 

@@ -60,7 +60,7 @@ console.log(summedPrice)
 function calcFinalPrice (cartTotal, couponValue, tax) {
     return (cartTotal + cartTotal * tax) - couponValue
 }
-
+// console.log(calcFinalPrice(10, 2, .05))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -84,10 +84,11 @@ function calcFinalPrice (cartTotal, couponValue, tax) {
 
 /*
     TEXT ANSWER HERE
-first name : so employees know what to call them
-last name : because first names arent usually unique
-phone number : to enter in for a rewards program
-email : to send out receipts or coupons to
+
+name (string), customer orders need a name so i know who the order is for
+address (string) need to know where to send food
+phone (string) in case we need to call user
+email (string) to send out receipts or coupons to
 */
 
 /*
@@ -98,7 +99,7 @@ email : to send out receipts or coupons to
 //CODE HERE
 const customer = {
     firstName: 'Bennett',
-    lastName: 'Crowley',
+    address: '20 W 34th St., New York, NY 10001',
     phoneNumber: "8018752975",
     email: 'benjcrowley@gmail.com'
 }
